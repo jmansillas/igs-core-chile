@@ -1,0 +1,8 @@
+{
+  "version": "1.7.0",
+  "fhirVersion": [
+    "4.0.1"
+  ],
+  "date": "20220906114636",
+  "name": "hl7.fhir.cl.corecl"
+}

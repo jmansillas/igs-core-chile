@@ -1,0 +1,90 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://hl7chile.cl/fhir/ig/CoreCL/Immunization/ImmunizationCL> a fhir:Immunization;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "ImmunizationCL"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://hl7chile.cl/fhir/ig/CoreCL/StructureDefinition/ImmunizationCL";
+       fhir:index 0;
+       fhir:link <https://hl7chile.cl/fhir/ig/CoreCL/StructureDefinition/ImmunizationCL>
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Immunization</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Immunization \"ImmunizationCL\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ImmunizationCL.html\">CL Inmunización</a></p></div><p><b>Nombre de la Campaña de vacunación establecida por el RNI (Registro Nacional de Inmunizaciones)</b>: Hepatitis A (Details: https://hl7chile.cl/fhir/ig/CoreCL/CodeSystem/CSNombreCampana code hepatiA = 'Hepatitis A', stated as 'Hepatitis A')</p><p><b>identifier</b>: id: 136588279</p><p><b>status</b>: completed</p><p><b>statusReason</b>:  <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> ()</span></p><p><b>vaccineCode</b>:  <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> ()</span></p><p><b>patient</b>: <a href=\"Patient-11.html\">Patient/11</a> \"\"</p><p><b>occurrence</b>: 2022-04-07 12:00:00-0400</p><p><b>recorded</b>: 2021-06-24 12:00:00-0400</p><p><b>location</b>: <a href=\"Location-3333458.html\">Location/3333458</a></p><p><b>lotNumber</b>: T3E881V</p><p><b>expirationDate</b>: 2022-03-31</p><h3>Performers</h3><table class=\"grid\"><tr><td>-</td><td><b>Actor</b></td></tr><tr><td>*</td><td><a href=\"Organization-f003.html\">Organization/f003</a> \"Hospital Nueva Aurora\"</td></tr></table><h3>ProtocolApplieds</h3><table class=\"grid\"><tr><td>-</td><td><b>DoseNumber[x]</b></td></tr><tr><td>*</td><td>1º dosis</td></tr></table></div>"
+  ];
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "https://hl7chile.cl/fhir/ig/CoreCL/StructureDefinition/NombreCampana" ];
+     fhir:Extension.valueCoding [
+       fhir:Coding.system [ fhir:value "https://hl7chile.cl/fhir/ig/CoreCL/CodeSystem/CSNombreCampana" ];
+       fhir:Coding.code [ fhir:value "hepatiA" ];
+       fhir:Coding.display [ fhir:value "Hepatitis A" ]
+     ]
+  ];
+  fhir:Immunization.identifier [
+     fhir:index 0;
+     fhir:Identifier.system [ fhir:value "http://sgi.gob.cl/identifier/inmunization/rni/" ];
+     fhir:Identifier.value [ fhir:value "136588279" ]
+  ];
+  fhir:Immunization.status [ fhir:value "completed"];
+  fhir:Immunization.statusReason [
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "https://hl7chile.cl/fhir/ig/CoreCL/StructureDefinition/RazonNOrealizarseInm" ];
+       fhir:Extension.valueCode [ fhir:value "solicitudPaci" ]
+     ]
+  ];
+  fhir:Immunization.vaccineCode [
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "https://hl7chile.cl/fhir/ig/CoreCL/StructureDefinition/TiposVacunaRNI" ];
+       fhir:Extension.valueCode [ fhir:value "hep_A" ]
+     ]
+  ];
+  fhir:Immunization.patient [
+     fhir:link <https://hl7chile.cl/fhir/ig/CoreCL/Patient/11>;
+     fhir:Reference.reference [ fhir:value "Patient/11" ]
+  ];
+  fhir:Immunization.occurrenceDateTime [ fhir:value "2022-04-07T00:00:00-04:00"^^xsd:dateTime];
+  fhir:Immunization.recorded [ fhir:value "2021-06-24T00:00:00-04:00"^^xsd:dateTime];
+  fhir:Immunization.location [
+     fhir:link <https://hl7chile.cl/fhir/ig/CoreCL/Location/3333458>;
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "https://hl7chile.cl/fhir/ig/CoreCL/StructureDefinition/ServicioSalud" ];
+       fhir:Extension.valueCoding [
+         fhir:Coding.system [ fhir:value "https://minsal.cl/fhir/HD/CodeSystem/CSCodSSalud" ];
+         fhir:Coding.code [ fhir:value "SSAN" ];
+         fhir:Coding.display [ fhir:value "Servicio de Salud Antofagasta" ]
+       ]
+     ];
+     fhir:Reference.reference [ fhir:value "Location/3333458" ]
+  ];
+  fhir:Immunization.lotNumber [ fhir:value "T3E881V"];
+  fhir:Immunization.expirationDate [ fhir:value "2022-03-31"^^xsd:date];
+  fhir:Immunization.performer [
+     fhir:index 0;
+     fhir:Immunization.performer.actor [
+       fhir:link <https://hl7chile.cl/fhir/ig/CoreCL/Organization/f003>;
+       fhir:Reference.reference [ fhir:value "Organization/f003" ]
+     ]
+  ];
+  fhir:Immunization.protocolApplied [
+     fhir:index 0;
+     fhir:Immunization.protocolApplied.doseNumberString [ fhir:value "1º dosis" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://hl7chile.cl/fhir/ig/CoreCL/Immunization/ImmunizationCL.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

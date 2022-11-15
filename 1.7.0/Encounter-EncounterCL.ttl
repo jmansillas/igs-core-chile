@@ -1,0 +1,142 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://hl7chile.cl/fhir/ig/CoreCL/Encounter/EncounterCL> a fhir:Encounter;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "EncounterCL"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://hl7chile.cl/fhir/ig/CoreCL/StructureDefinition/EncounterCL";
+       fhir:index 0;
+       fhir:link <https://hl7chile.cl/fhir/ig/CoreCL/StructureDefinition/EncounterCL>
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Encounter</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Encounter \"EncounterCL\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-EncounterCL.html\">CL Encuentro</a></p></div><p><b>Notas realizadas en un encuentro por Comité</b>: Encuentro exitoso</p><p><b>status</b>: planned</p><p><b>class</b>: Virtual (Details: http://terminology.hl7.org/CodeSystem/v3-ActCode code VR = 'virtual', stated as 'Virtual')</p><p><b>type</b>: PR <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (CSTiposEncuentroCL#PR)</span></p><p><b>serviceType</b>: nutINTA <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (CSCodigoServicio#nutINTA)</span></p><p><b>subject</b>: <a href=\"Patient-11.html\">Patient/11</a> \"\"</p><blockquote><p><b>participant</b></p><p><b>Especialidad del médico principal</b>: Anatomía Patológica (Details: https://hl7chile.cl/fhir/ig/CoreCL/CodeSystem/CSEspecialidadesDeisCL code 01 = 'Anatomía Patológica', stated as 'Anatomía Patológica')</p><p><b>type</b>: primary performer <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-v3-ParticipationType.html\">ParticipationType</a>#PPRF)</span></p><p><b>individual</b>: <a href=\"Practitioner-3020.html\">Practitioner/3020</a> \"\"</p></blockquote><blockquote><p><b>participant</b></p><p><b>Contacto de los participantes secundarios del encuentro</b>: <a href=\"mailto:jose.12@gmail.com\">jose.12@gmail.com</a></p><p><b>type</b>: secondary performer <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-v3-ParticipationType.html\">ParticipationType</a>#SPRF)</span></p></blockquote><p><b>period</b>: 2022-06-23 12:00:00-0300 --&gt; 2022-06-23 12:50:00-0300</p><p><b>reasonCode</b>: Consulta médica sobre nutrición de alimentos <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> ()</span></p><h3>Diagnoses</h3><table class=\"grid\"><tr><td>-</td><td><b>Extension</b></td><td><b>Condition</b></td></tr><tr><td>*</td><td></td><td><span>: Condition IPS</span></td></tr></table><p><b>serviceProvider</b>: <a href=\"Organization-f003.html\">Organization/f003</a> \"Hospital Nueva Aurora\"</p></div>"
+  ];
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "https://hl7chile.cl/fhir/ig/CoreCL/StructureDefinition/NotasEncuentro" ];
+     fhir:Extension.valueString [ fhir:value "Encuentro exitoso" ]
+  ];
+  fhir:Encounter.status [ fhir:value "planned"];
+  fhir:Encounter.class [
+     fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ActCode" ];
+     fhir:Coding.code [ fhir:value "VR" ];
+     fhir:Coding.display [ fhir:value "Virtual" ]
+  ];
+  fhir:Encounter.type [
+     fhir:index 0;
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "https://hl7chile.cl/fhir/ig/CoreCL/StructureDefinition/TiposEncuentro" ];
+       fhir:Extension.valueCode [ fhir:value "PR" ]
+     ];
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "https://minsal.cl/fhir/HD/CodeSystem/CSTiposEncuentroCL" ];
+       fhir:Coding.code [ fhir:value "PR" ]
+     ]
+  ];
+  fhir:Encounter.serviceType [
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "https://hl7chile.cl/fhir/ig/CoreCL/StructureDefinition/TiposServicio" ];
+       fhir:Extension.valueCode [ fhir:value "nutINTA" ]
+     ];
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "https://minsal.cl/fhir/HD/CodeSystem/CSCodigoServicio" ];
+       fhir:Coding.code [ fhir:value "nutINTA" ]
+     ]
+  ];
+  fhir:Encounter.subject [
+     fhir:link <https://hl7chile.cl/fhir/ig/CoreCL/Patient/11>;
+     fhir:Reference.reference [ fhir:value "Patient/11" ]
+  ];
+  fhir:Encounter.participant [
+     fhir:index 0;
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "https://hl7chile.cl/fhir/ig/CoreCL/StructureDefinition/VSEspecialidadesDeisCL" ];
+       fhir:Extension.valueCoding [
+         fhir:Coding.system [ fhir:value "https://hl7chile.cl/fhir/ig/CoreCL/CodeSystem/CSEspecialidadesDeisCL" ];
+         fhir:Coding.code [ fhir:value "01" ];
+         fhir:Coding.display [ fhir:value "Anatomía Patológica" ]
+       ]
+     ];
+     fhir:Encounter.participant.type [
+       fhir:index 0;
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ParticipationType" ];
+         fhir:Coding.code [ fhir:value "PPRF" ]
+       ]
+     ];
+     fhir:Encounter.participant.individual [
+       fhir:link <https://hl7chile.cl/fhir/ig/CoreCL/Practitioner/3020>;
+       fhir:Reference.reference [ fhir:value "Practitioner/3020" ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "https://hl7chile.cl/fhir/ig/CoreCL/StructureDefinition/ContactoParticipantes" ];
+       fhir:Extension.valueContactPoint [
+         fhir:ContactPoint.system [ fhir:value "email" ];
+         fhir:ContactPoint.value [ fhir:value "jose.12@gmail.com" ]
+       ]
+     ];
+     fhir:Encounter.participant.type [
+       fhir:index 0;
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ParticipationType" ];
+         fhir:Coding.code [ fhir:value "SPRF" ]
+       ]
+     ]
+  ];
+  fhir:Encounter.period [
+     fhir:Period.start [ fhir:value "2022-06-23T00:00:00-03:00"^^xsd:dateTime ];
+     fhir:Period.end [ fhir:value "2022-06-23T00:50:00-03:00"^^xsd:dateTime ]
+  ];
+  fhir:Encounter.length [
+     fhir:Quantity.value [ fhir:value "50"^^xsd:decimal ]
+  ];
+  fhir:Encounter.reasonCode [
+     fhir:index 0;
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "https://hl7chile.cl/fhir/ig/CoreCL/StructureDefinition/RazonNOrealizarse" ];
+       fhir:Extension.valueCode [ fhir:value "pierdellam" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "Consulta médica sobre nutrición de alimentos" ]
+  ];
+  fhir:Encounter.diagnosis [
+     fhir:index 0;
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "https://hl7chile.cl/fhir/ig/CoreCL/StructureDefinition/ObservacionesDiagnostico" ];
+       fhir:Extension.valueString [ fhir:value "Buena atención" ]
+     ];
+     fhir:Encounter.diagnosis.condition [
+       fhir:Reference.display [ fhir:value "Condition IPS" ]
+     ]
+  ];
+  fhir:Encounter.serviceProvider [
+     fhir:link <https://hl7chile.cl/fhir/ig/CoreCL/Organization/f003>;
+     fhir:Reference.reference [ fhir:value "Organization/f003" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://hl7chile.cl/fhir/ig/CoreCL/Encounter/EncounterCL.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+
